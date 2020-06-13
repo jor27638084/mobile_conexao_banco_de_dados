@@ -1,11 +1,13 @@
 // This is a JavaScript file
 
+/* ----------------------------------------------------------------------------------------------------------------------- */
+//Função que nos leva para a pagina registros.html
 $(document).on("click", "#list", function(){
   $(location).attr("href","registros.html");
 });
 
-
-
+/* ----------------------------------------------------------------------------------------------------------------------- */
+//Função que salva um registro
 $(document).on("click","#save", function(){
 function alertCallback(){
 }
@@ -33,6 +35,8 @@ function alertCallback(){
   });
 });
 
+/* --------------------------------------------------------------------------------------------------------------------- */
+//Função que carrega a lista dados cadastrados no banco
 function listar(){
   $.ajax({
     type: "post",
@@ -51,10 +55,14 @@ function listar(){
   })
 }
 
+/* -------------------------------------------------------------------------------------------------------- */
+//Função Acionada assim que carrega a pagina registros.html chama a função listar()
 $(document).ready("registros.html", function(){
   listar();
 });
 
+/* ---------------------------------------------------------------------------------------------------------- */
+//Funçã o para navegar entre os registros regsitrados
 $(document).on("change", "#personList", function(){
   var parameter = {
     "codigo": $("option:select", ("#personList")).val()
