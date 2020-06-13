@@ -1,0 +1,47 @@
+/**/
+body{
+  background: radial-gradient(red, blue, yellow, grey);
+  background-repeat: no-repeat;
+  width: 90%;
+  height: 850px;
+}
+.jumbotron{
+  border-radius: 100px;
+  background: linear-gradient(red, blue, yellow, grey);
+  box-shadow: 50px 25px  rgba(0,0,0,0.5), -50px -25px indianred ;
+  margin-top: 20px;
+  color: white;
+  text-shadow: 10px 10px black;
+}
+.title{
+  color: white;
+}
+label{
+  margin-left: 20px;
+}
+select, input{
+  margin: 10px;
+  margin-right: 10px;
+  
+}
+.form-control{
+  border-radius: 100px;
+}
+
+.btn-block{
+  border-radius: 50px;
+  margin-top: 40px;
+  margin: 10px;
+  text-align: center;
+}
+
+.group-bt{
+  border-radius: 50px;
+  margin: 20px 0px 0px 0px;
+  text-align: center;
+}
+
+.btn-group{
+  margin-left: 20%;
+}
+

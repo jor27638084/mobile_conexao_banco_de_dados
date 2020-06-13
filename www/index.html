@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Conexão com Banco de Dados</h1>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h1 class="title">Cadastro de Pessoas</h1>
+        <div class="form-group">
+          <form action="" class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" name="name" id="nome">
+            <label for="email">E-Mail</label>
+            <input type="text" class="form-control" name="email" id="email">
+            <label for="password">Senha</label>
+            <input type="password" class="form-control" name="password" id="senha">
+            <button class="btn btn-block btn-primary" id="save">Cadastrar</button>
+          </form>
+          <button class="btn btn-block btn-primary" id="list">Registros</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/acao.js"></script>
+</html>
