@@ -36,7 +36,7 @@ function alertCallback(){
 });
 
 /* --------------------------------------------------------------------------------------------------------------------- */
-//Função que carrega a lista dados cadastrados no banco
+//Função que carrega a lista de dados cadastrados no banco
 function listar(){
   $.ajax({
     type: "post",
@@ -56,13 +56,13 @@ function listar(){
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
-//Função Acionada assim que carrega a pagina registros.html chama a função listar()
+//Função Acionada assim que carrega a pagina registros.html, chama a função listar()
 $(document).ready("registros.html", function(){
   listar();
 });
 
 /* ---------------------------------------------------------------------------------------------------------- */
-//Funçã o para navegar entre os registros regsitrados
+//Função para navegar entre os registros regsitrados
 $(document).on("change", "#personList", function(){
   var parameter = {
     "codigo": $("option:select", ("#personList")).val()
@@ -82,4 +82,52 @@ $(document).on("change", "#personList", function(){
       navigator.notification.alert("Erro ao buscar registro.");
     } 
   })
+})
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+
+//Funções que habilitam e desabilitam o readonly
+function unlock(){
+   $("#nome").prop("readonly", false);
+   $("#email").prop("readonly", false);
+   $("#senha").prop("readonly", false);
+}
+
+function block(){
+   $("#nome").prop("readonly", true);
+   $("#email").prop("readonly", true);
+   $("#senha").prop("readonly", true);
+}
+/* --------------------------------------------------------------------------------------------------------------------- */
+//Botão editar
+$(document).on("click", "#edition", function(){
+  unlock();
+})
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+//Botão Salvar
+$(document).on("click", "#save_edition", function(){
+
+  var parameters = {
+    "codigo":("#codigo").val(),
+    "nome":$("#nome").val(),
+    "senha":$("#senha").val(),
+    "email":$("#email").val()
+  }
+
+   $.ajax({
+     type: post,
+     url: "https://wordpress-online-2.000webhostapp.com/webservice/atualiza.php",
+     data: parameters,
+     success: function(){
+       navigator.notification.alert(data);
+       location.reload();
+       block();
+     },
+     error: function(){
+       navigator.notification.alert("Erro ao salvar cadastro.")
+     }
+
+   })
 })
